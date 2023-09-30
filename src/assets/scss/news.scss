@@ -15,7 +15,12 @@
 		font-weight: bold;
 	}
 }
-
+.myContent{
+	flex-wrap: wrap;
+}
+.my-7{
+	margin: 6em auto;
+}
 
 @media screen and (min-width:768px) {
 	.title{

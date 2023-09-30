@@ -7,6 +7,7 @@ import Twiter from "../assets/image/twiter.png";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { Fade } from 'react-reveal';
 import MyContact from '../components/contact';
+import CustomCard from '../components/card';
 const News = () => {
 
   const MyIcons = [
@@ -35,6 +36,14 @@ const News = () => {
       </div>
       
       <MyContact text="red"/>
+      <div className="container d-flex justify-content-center myContent gap-3 my-7" id='red'>
+        <CustomCard/>
+        <CustomCard/>
+        <CustomCard/>
+        <CustomCard/>
+        <CustomCard/>
+        <CustomCard/>
+      </div>
     </PageConatiner>
     
   )
