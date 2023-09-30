@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {AiOutlineArrowUp} from 'react-icons/ai'
+import {RxDoubleArrowUp} from 'react-icons/rx'
 import '../../assets/scss/backtoTop.scss'
 const BackToTop = () => {
 	const [backToTopButton,setBackToTopButton]=useState(false)
@@ -26,7 +26,7 @@ const BackToTop = () => {
 		className='backToTop'
 		
 		>
-		<a href="#up"><AiOutlineArrowUp className='backAnime'/></a>
+		<a href="#up"><RxDoubleArrowUp className='backAnime'/></a>
 			
 		</button>
 	)

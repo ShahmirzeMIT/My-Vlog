@@ -16,8 +16,8 @@ export const MyNavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <a href="/">Home</a>
-              <a href="/blog">Blog</a>
               <a href="/news">News</a>
+              <a href="/blog">Blog</a>
               <a href="/game">Game</a>
 
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">

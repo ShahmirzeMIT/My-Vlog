@@ -1,5 +1,6 @@
 import {React ,lazy,Suspense	} from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Contact from '../../components/contact'
 const  News=lazy(()=>import('../../pages/news'))
 const  Home=lazy(()=>import('../../pages/home'))
 const  Blog=lazy(()=>import('../../pages/blog'))

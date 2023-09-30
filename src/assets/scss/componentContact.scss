@@ -1,0 +1,51 @@
+.social-icons{
+display: none !important;
+
+}
+.swipe{
+	display: none;
+}
+@media screen and (min-width:768px) {
+	.social-icons{
+		display: inherit !important;
+	.myicon{
+		& div{
+			margin-left: 10px;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		img{
+			width: 34px;
+		}
+		.Reddit{
+			margin-top: 4px;
+			img{width: 25px; margin-right: 7px;}
+		}
+		.Twiter{
+	padding-top: 4px;
+		}
+	}
+	
+}
+.swipe{
+	display: block !important;
+	a{
+		text-decoration: none;
+		color: black;
+		font-size: 14px;
+		.bottom{
+			animation: bottomTop;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;  
+		}
+	}
+}
+@keyframes bottomTop {
+	0% {transform: translateY(-5px);}
+	100% {transform: translateY(0);}
+}
+}
+
