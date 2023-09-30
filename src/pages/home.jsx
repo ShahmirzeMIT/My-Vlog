@@ -19,7 +19,9 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import Fade from "react-reveal/Fade";
+import Slide from 'react-reveal/Slide';
+import BackToTop from "../layout/BackToTop/BackToTop";
 const Home = () => {
   const MyIcons = [
     {
@@ -100,83 +102,83 @@ const Home = () => {
     },
   ];
 
-  const fadeInLeftRef = useRef(null);
-  const fadeInLeftRef2 = useRef(null);
-  const fadeInRightRef = useRef(null);
-  const fadeInRightRef2 = useRef(null);
-  const fadeInUpRef = useRef(null);
+  // const fadeInLeftRef = useRef(null);
+  // const fadeInLeftRef2 = useRef(null);
+  // const fadeInRightRef = useRef(null);
+  // const fadeInRightRef2 = useRef(null);
+  // const fadeInUpRef = useRef(null);
   const [slidesPerView, setSlidesPerView] = useState(5);
 
-  const handleIntersect = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate__animated");
-        if (entry.target === fadeInLeftRef.current) {
-          entry.target.classList.add("animate__fadeInLeft");
-        } else if (entry.target === fadeInRightRef.current) {
-          entry.target.classList.add("animate__fadeInRight");
-        }
-        if (entry.target === fadeInLeftRef2.current) {
-          entry.target.classList.add("animate__fadeInLeft");
-        } else if (entry.target === fadeInRightRef2.current) {
-          entry.target.classList.add("animate__fadeInRight");
-        } else if (entry.target === fadeInUpRef.current) {
-          entry.target.classList.add("animate__fadeInUp");
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  };
+  // const handleIntersect = (entries, observer) => {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       entry.target.classList.add("animate__animated");
+  //       if (entry.target === fadeInLeftRef.current) {
+  //         entry.target.classList.add("animate__fadeInLeft");
+  //       } else if (entry.target === fadeInRightRef.current) {
+  //         entry.target.classList.add("animate__fadeInRight");
+  //       }
+  //       if (entry.target === fadeInLeftRef2.current) {
+  //         entry.target.classList.add("animate__fadeInLeft");
+  //       } else if (entry.target === fadeInRightRef2.current) {
+  //         entry.target.classList.add("animate__fadeInRight");
+  //       } else if (entry.target === fadeInUpRef.current) {
+  //         entry.target.classList.add("animate__fadeInUp");
+  //       }
+  //       observer.unobserve(entry.target);
+  //     }
+  //   });
+  // };
 
-  useEffect(() => {
-    const options = {
-      threshold: 0.5,
-    };
+  // useEffect(() => {
+  //   const options = {
+  //     threshold: 0.5,
+  //   };
 
-    const observer = new IntersectionObserver(handleIntersect, options);
+  //   const observer = new IntersectionObserver(handleIntersect, options);
 
-    if (fadeInLeftRef.current) {
-      observer.observe(fadeInLeftRef.current);
-    }
+  //   if (fadeInLeftRef.current) {
+  //     observer.observe(fadeInLeftRef.current);
+  //   }
 
-    if (fadeInRightRef.current) {
-      observer.observe(fadeInRightRef.current);
-    }
+  //   if (fadeInRightRef.current) {
+  //     observer.observe(fadeInRightRef.current);
+  //   }
 
-    if (fadeInLeftRef2.current) {
-      observer.observe(fadeInLeftRef2.current);
-    }
+  //   if (fadeInLeftRef2.current) {
+  //     observer.observe(fadeInLeftRef2.current);
+  //   }
 
-    if (fadeInRightRef2.current) {
-      observer.observe(fadeInRightRef2.current);
-    }
+  //   if (fadeInRightRef2.current) {
+  //     observer.observe(fadeInRightRef2.current);
+  //   }
 
-    if (fadeInUpRef.current) {
-      observer.observe(fadeInUpRef.current);
-    }
+  //   if (fadeInUpRef.current) {
+  //     observer.observe(fadeInUpRef.current);
+  //   }
 
-    return () => {
-      if (fadeInLeftRef.current) {
-        observer.unobserve(fadeInLeftRef.current);
-      }
+  //   return () => {
+  //     if (fadeInLeftRef.current) {
+  //       observer.unobserve(fadeInLeftRef.current);
+  //     }
 
-      if (fadeInRightRef.current) {
-        observer.unobserve(fadeInRightRef.current);
-      }
+  //     if (fadeInRightRef.current) {
+  //       observer.unobserve(fadeInRightRef.current);
+  //     }
 
-      if (fadeInLeftRef2.current) {
-        observer.unobserve(fadeInLeftRef2.current);
-      }
+  //     if (fadeInLeftRef2.current) {
+  //       observer.unobserve(fadeInLeftRef2.current);
+  //     }
 
-      if (fadeInRightRef2.current) {
-        observer.unobserve(fadeInRightRef2.current);
-      }
+  //     if (fadeInRightRef2.current) {
+  //       observer.unobserve(fadeInRightRef2.current);
+  //     }
 
-      if (fadeInUpRef.current) {
-        observer.unobserve(fadeInUpRef.current);
-      }
-    };
-  }, []);
+  //     if (fadeInUpRef.current) {
+  //       observer.unobserve(fadeInUpRef.current);
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -200,44 +202,50 @@ const Home = () => {
   return (
     <PageConatiner>
       <div className="container">
-        <div className="d-flex justify-content-center mystyle">
-          <div className="left" ref={fadeInLeftRef}>
-            Motivation Everyone's Successful Story Is Key
-          </div>
-          <div className="right" ref={fadeInRightRef}>
-            <img src={HeadLogo} alt="" />
-          </div>
+        <div className="d-flex justify-content-center mystyle" id="up">
+          <Fade left big>
+            <div className="left">
+              Motivation Everyone's Successful Story Is Key
+            </div>
+          </Fade>
+          <Fade right>
+            <div className="right">
+              <img src={HeadLogo} alt="" />
+            </div>
+          </Fade>
         </div>
-        <div
-          ref={fadeInUpRef}
-          className="social d-flex justify-content-between my-5"
-        >
-          <div className="social-icons">
-            <div className="myicon d-flex justify-content-between">
-              {MyIcons.map((elem, index) => (
-                <div key={index} className={elem.text}>
-                  <a href="#">
-                    <img src={elem.src} alt={elem.text} />
-                    {elem.text}
-                  </a>
-                </div>
-              ))}
+        <Fade bottom>
+          <div className="social d-flex justify-content-between my-5">
+            <div className="social-icons">
+              <div className="myicon d-flex justify-content-between">
+                {MyIcons.map((elem, index) => (
+                  <div key={index} className={elem.text}>
+                    <a href="#">
+                      <img src={elem.src} alt={elem.text} />
+                      {elem.text}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="swipe">
+              <a href="#down">
+                <span>
+                  <AiOutlineArrowDown /> SWIPE DOWN
+                </span>
+              </a>
             </div>
           </div>
-          <div className="swipe">
-            <a href="#down">
-              <span>
-                <AiOutlineArrowDown /> SWIPE DOWN
-              </span>
-            </a>
-          </div>
-        </div>
+        </Fade>
         <div id="down" className="brushUp d-flex justify-content-between">
-          <div className="left" ref={fadeInRightRef2}>
-            <img src={SitLogo} alt="" />
-          </div>
+          <Fade right>
+            <div className="left">
+              <img src={SitLogo} alt="" />
+            </div>
+          </Fade>
 
-          <div className="right" ref={fadeInLeftRef2}>
+          <Fade left>
+          <div className="right">
             <h2>Why do you brush up on always?</h2>
             {AccContent.map((elem, index) => (
               <Accordion className="my-2" key={index}>
@@ -254,8 +262,11 @@ const Home = () => {
               </Accordion>
             ))}
           </div>
+          </Fade>
         </div>
+
         <div className="my-swiper">
+        <Slide bottom>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={10}
@@ -281,20 +292,31 @@ const Home = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          </Slide>
         </div>
 
         <div className="useLpatop d-flex ">
+          <Fade left>
           <div className="left">
             <h1>Why do you make progress yourselfy constantly!</h1>
             <p>
-            Continuous progress is essential for personal growth, goal achievement, adaptability, confidence, learning, and seizing opportunities. It's about becoming better, achieving your aspirations, staying relevant, and embracing new chances.
+              Continuous progress is essential for personal growth, goal
+              achievement, adaptability, confidence, learning, and seizing
+              opportunities. It's about becoming better, achieving your
+              aspirations, staying relevant, and embracing new chances.
             </p>
           </div>
-          <div className="right">
+          </Fade>
+         <Fade right>
+         <div className="right">
             <img src={LaptopLogo} alt="" />
           </div>
+         </Fade>
+         
         </div>
+        
       </div>
+     <BackToTop/>
     </PageConatiner>
   );
 };
