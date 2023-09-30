@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+}
+
+.mystyle{
+	position: relative;
+	flex-direction: column;
+	text-align: center;
+	.left{
+		font-size: 2em;
+		font-weight: bold;
+	}
+
+	.right{
+		img{
+			position: relative;
+			animation-name: success;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;  
+			width: 280px;
+			
+		}
+		
+	}
+	@keyframes success {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(20px);
+		}
+	}
+
+    	
+}
+.social{
+	.social-icons{
+		.myicon{
+			display: none !important;
+			a{
+				text-decoration: none;
+				color: black;
+			}
+		}
+	}
+	.swipe{
+		padding-top: 6px;
+		a{
+			text-decoration: none;
+			color: black;
+			span{
+				svg{
+					font-size: 14px;
+					color: #7f7c7c;
+					animation: scroll;
+					animation-duration: 0.6s;
+					animation-iteration-count: infinite;
+					animation-direction: alternate;  
+				}
+				font-size: 11px;
+				font-weight: bold;
+			}
+		}
+		
+	}
+	@keyframes scroll {
+		0% {
+			transform: translateY(-5px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+	
+}
+.brushUp{
+	flex-direction: column-reverse;
+	text-align: center;
+	.left{
+		img{
+			width: 100%;
+			animation: brush;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;  
+		}
+	}
+}
+
+@keyframes brush{
+	0%{
+		transform: translateY(-10px);
+	}
+	100%{
+		transform: translateY(0px);
+	}
+}
+
+
+   
+   
+@media screen and (min-width:768px) {
+	.mystyle{
+		flex-direction: row;
+		text-align: inherit;
+		.left{
+			font-size: 3em;
+		}
+		.right{
+			img{
+				width: 380px;
+			}
+		}
+	}
+	.social{
+		.social-icons{
+		
+			.myicon{
+				display: flex !important;
+				font-size: 12px;
+				& div{
+					margin-left: 15px;
+				}
+				.Reddit{
+					margin-top: 2px;
+					img{
+						width: 25px !important;
+						margin-right: 10px;
+					}
+				}
+				.Twiter{
+					margin-top: 6px;
+				}
+				img{
+					width: 30px;
+				}
+			}
+		}
+	}
+	.brushUp{
+		flex-direction: row;
+		text-align: inherit;
+		.left{
+			img{
+				width: 400px;
+			}
+		}
+		
+	}
+			
+}
+
+@media screen and (min-width:992px) {
+	.mystyle{
+		position: relative;
+		.left{
+			font-size: 4em;
+			font-weight: bold;
+		}
+	
+		.right{
+			img{
+				width: inherit;
+				height: 420px;
+				position: relative;
+				animation-name: success;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;  
+			}
+			
+		}
+		@keyframes success {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(25px);
+			}
+		}
+	}
+	.brushUp{
+		.left{
+			img{
+				width: inherit;
+			}
+		}
+	}
+}

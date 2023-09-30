@@ -7,7 +7,7 @@ const  Game=lazy(()=>import('../../pages/game'))
 const Routing = () => {
 	const LoadingFallback = () => (
 		<div style={{ textAlign: 'center', padding: '20px', fontSize: '20px' }}>
-		  Loading... Please wait.
+		  Loading...
 		</div>
 	   );
   return (
