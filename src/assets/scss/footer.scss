@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+}
+
+
+.endUp{
+text-align: center;
+font-size: 12px;
+padding: 20px 0 ;
+background-color: #292930;
+color: white;
+font-weight: bold;
+ .myIcons{
+	display: block;
+	padding: 15px 0;
+	&>div{
+		padding: 5px;
+		margin: 10px 20px;
+		border: 1px solid white;
+		border-radius: 50%;
+		a{
+			text-decoration: none;
+			color: white;
+			}
+			.Reddit{
+				margin-top: 2px;
+				img{
+					width: 25px !important;
+					margin-right: 10px;
+				}
+			}
+			.Twiter{
+				padding-top: 10px;
+			}
+			img{
+				width: 34px;
+			}
+	}
+	
+ }
+}
+
+@media screen and (min-width:768px) {
+	.myIcons{
+		display: none !important;
+	}
+}

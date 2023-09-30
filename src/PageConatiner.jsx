@@ -1,5 +1,6 @@
 import React from 'react'
 import { MyNavBar } from './layout/navbar/navbar'
+import Footer from './layout/footer/footer'
 
 export const PageConatiner = ({children}) => {
   return (
@@ -8,7 +9,9 @@ export const PageConatiner = ({children}) => {
 	<MyNavBar/>
 	</header>
 	<main>{children}</main>
-	<footer></footer>
+	<footer>
+		<Footer/>
+	</footer>
     </div>
   )
 }
