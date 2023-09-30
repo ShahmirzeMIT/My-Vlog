@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {RxDoubleArrowUp} from 'react-icons/rx'
 import '../../assets/scss/backtoTop.scss'
-const BackToTop = () => {
+const BackToTop = ({href}) => {
 	const [backToTopButton,setBackToTopButton]=useState(false)
 	useEffect(()=>{
 		window.addEventListener('scroll',()=>{
-			if(window.scrollY>600){
+			if(window.scrollY>400){
 				setBackToTopButton(true)
 			}
 			else{
@@ -26,7 +26,7 @@ const BackToTop = () => {
 		className='backToTop'
 		
 		>
-		<a href="#up"><RxDoubleArrowUp className='backAnime'/></a>
+		<a href={`#${href}`}><RxDoubleArrowUp className='backAnime'/></a>
 			
 		</button>
 	)

@@ -1,6 +1,7 @@
 import {React ,lazy,Suspense	} from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Card from '../../components/card'
+import Contact from '../../pages/contact'
 const  News=lazy(()=>import('../../pages/news'))
 const  Home=lazy(()=>import('../../pages/home'))
 const  Blog=lazy(()=>import('../../pages/blog'))
@@ -15,9 +16,9 @@ const Routing = () => {
 	<Routes>
       <Route element={<Suspense fallback={<LoadingFallback />}><Home /></Suspense>} path='/' />
       <Route element={<Suspense fallback={<LoadingFallback />}><News /></Suspense>} path='/news' />
-      <Route element={<Suspense fallback={<LoadingFallback />}><Card /></Suspense>} path='/card' />
       <Route element={<Suspense fallback={<LoadingFallback />}><Blog /></Suspense>} path='/blog' />
       <Route element={<Suspense fallback={<LoadingFallback />}><Game /></Suspense>} path='/game' />
+      <Route element={<Suspense fallback={<LoadingFallback />}><Contact /></Suspense>} path='/contact' />
     	</Routes>
   )
 }

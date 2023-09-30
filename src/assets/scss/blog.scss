@@ -1,0 +1,28 @@
+.myChat{
+	flex-direction: column;
+	text-align: center;
+	.left{
+		h1{font-weight: bold;}
+	}
+	.right{
+		img{
+			animation-name: chat;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;  
+		}
+	}
+	
+}
+
+@keyframes chat {
+	0%{transform: translateX(-30px);}
+	1000%{transform: translateX(-0px);}
+}
+
+@media screen and (min-width:768px){
+.myChat{
+	flex-direction: row;
+	text-align: inherit;
+}	
+}

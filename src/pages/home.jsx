@@ -316,7 +316,7 @@ const Home = () => {
         </div>
         
       </div>
-     <BackToTop/>
+     <BackToTop href="up"/>
     </PageConatiner>
   );
 };

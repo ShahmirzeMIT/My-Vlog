@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        Site @by Soft-Sahil
+        Site @by Soft - Sahil
       </div>
     </div>
   );
