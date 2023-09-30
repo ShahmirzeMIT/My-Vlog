@@ -108,6 +108,27 @@
 	}
 }
 
+.useLpatop{
+	flex-direction: column-reverse;
+	.right{
+		img{
+			width: 100%;
+			animation: laptop;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate; 
+		}
+	}
+}
+
+@keyframes laptop{
+	0%{
+		transform: translateY(-30px);
+	}
+	100%{
+		transform: translateY(0px);
+	}
+}
 
    
    
@@ -168,6 +189,14 @@
 			font-size: 12px;
 		}
 	}
+	.useLpatop{
+		flex-direction: row;
+		.right{
+			img{
+				width: 400px;
+			}
+		}
+	}
 			
 }
 
@@ -206,5 +235,13 @@
 				width: inherit;
 			}
 		}
+	}
+
+	.useLpatop{
+	.right{
+		img{
+			width: inherit;
+		}
+	}
 	}
 }
