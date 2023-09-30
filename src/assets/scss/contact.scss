@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+}
+.myContact{
+	height: 200px;
+	width: 100%;
+	background: url('../image/daxili.png') center/cover;
+	
+	height: 200px;
+	.container{
+		.left{
+			h1{
+				font-weight: bold;
+			}
+		}
+	}
+}
+.myHit{
+	flex-direction: column-reverse;
+	.left{
+		img{
+			animation: contact;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;  
+		}
+	}
+}
+
+@keyframes contact {
+	0%{transform: translateY(-20px);}
+	100%{transform: translateY(0px);}
+}
+@media screen and (min-width:768px) {
+	.myHit{
+		flex-direction: row;
+	}
+}
