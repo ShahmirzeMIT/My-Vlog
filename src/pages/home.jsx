@@ -7,6 +7,17 @@ import Reddit from "../assets/image/reddit.png";
 import Twiter from "../assets/image/twiter.png";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import "../assets/scss/home.scss";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Home = () => {
   const MyIcons = [
@@ -29,6 +40,7 @@ const Home = () => {
   const fadeInRightRef = useRef(null);
   const fadeInRightRef2 = useRef(null);
   const fadeInUpRef = useRef(null);
+  const [slidesPerView, setSlidesPerView] = useState(5);
 
   const handleIntersect = (entries, observer) => {
     entries.forEach((entry) => {
@@ -101,6 +113,25 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 769) {
+        setSlidesPerView(2);
+      } else if (screenWidth > 768 && screenWidth < 992) {
+        setSlidesPerView(3);
+      } else {
+        setSlidesPerView(5);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <PageConatiner>
       <div className="container">
@@ -143,8 +174,236 @@ const Home = () => {
 
           <div className="right" ref={fadeInLeftRef2}>
             <h2>Why do you brush up on always?</h2>
-            <p>First of all, when I got hired for my first job</p>
+            <Accordion className="my-2">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Retention</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                Regular review helps reinforce what you've learned, making it easier to recall the information later.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion className="my-2">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Understanding</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                Revisiting concepts allows for a deeper understanding and identification of gaps in knowledge.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion className="my-2">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Long-term Learning</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                Spaced repetition and regular revision contribute to long-term retention of information.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion className="my-2">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Adaptation</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                Knowledge evolves, and staying updated through revision ensures you're aware of the latest advancements and changes in your field..
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion className="my-2">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Application</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                Regular revision helps you apply what you've learned to real-life scenarios, improving practical skills and problem-solving abilities.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </div>
+        </div>
+        <div className="my-swiper">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={10}
+            slidesPerView={slidesPerView}
+            loop="true"
+            //  pagination={{ clickable: true }}
+            onSlideChange={() => console.log("slide change")}
+            className="my-5"
+            style={{ justifyContent: "space-between" }}
+          >
+            <div className="swiper-wrapper">
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Set Clear Goals</h5>
+                <p>
+                  {" "}
+                  Define specific, achievable objectives to provide direction
+                  and motivation for your improvement efforts.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Continuous Learning</h5>
+                <p>
+                  Embrace a mindset of continuous learning and growth, seeking
+                  knowledge and skills to enhance yourself.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Self-awareness</h5>
+                <p>
+                  Understand your strengths, weaknesses, values, and motivations
+                  to tailor your improvement strategies effectively.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Adaptability</h5>
+                <p>
+                  {" "}
+                  Be flexible and open to change, ready to adjust your
+                  approaches based on feedback and new information.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Action-Oriented</h5>
+                <p>
+                  {" "}
+                  Take proactive steps towards your goals, making consistent
+                  efforts and avoiding procrastination.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Resilience</h5>
+                <p>
+                  {" "}
+                  Build the ability to bounce back from setbacks and failures,
+                  using them as learning experiences to fuel future progress.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Feedback and Reflection</h5>
+                <p>
+                  Seek feedback from others and engage in self-reflection to
+                  understand your performance and areas for improvement.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Time Managemen</h5>
+                <p>
+                  Organize your time efficiently, prioritizing tasks and
+                  dedicating focused periods to specific improvements.
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Collaboration and Networking</h5>
+                <p>
+                  Connect with others, share experiences, and collaborate to
+                  gain different perspectives and insights for improvement
+                </p>
+              </SwiperSlide>
+              <SwiperSlide
+                style={{
+                  width: "100px !important",
+                  height: "100px !important",
+                  textAlign: "center",
+                }}
+                className="slider-img"
+              >
+                <h5>Health and Well-being</h5>
+                <p>
+                  Prioritize your physical and mental health, ensuring you have
+                  the energy and wellness to sustain your improvement journey.
+                </p>{" "}
+              </SwiperSlide>
+            </div>
+          </Swiper>
         </div>
       </div>
     </PageConatiner>

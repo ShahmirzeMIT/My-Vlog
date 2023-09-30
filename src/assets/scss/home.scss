@@ -92,10 +92,19 @@
 
 @keyframes brush{
 	0%{
-		transform: translateY(-10px);
+		transform: translateY(-20px);
 	}
 	100%{
 		transform: translateY(0px);
+	}
+}
+.slider-img{
+	h5{
+		font-size: 17px;
+		font-weight: bold;
+	}
+	p{
+		font-size: 12px;
 	}
 }
 
@@ -149,6 +158,15 @@
 			}
 		}
 		
+	}
+
+	.slider-img{
+		h5{
+			font-weight: bold;
+		}
+		p{
+			font-size: 12px;
+		}
 	}
 			
 }
