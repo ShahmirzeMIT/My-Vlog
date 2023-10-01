@@ -1,3 +1,4 @@
+import { AuthProvider } from "./context/AuthContext"
 import Routing from "./layout/Routing/routing"
 
 
@@ -5,7 +6,10 @@ function App() {
 
   return (
     <>
-    <Routing/>
+    <AuthProvider>
+      <Routing/>
+    </AuthProvider>
+    
     </>
   )
 }

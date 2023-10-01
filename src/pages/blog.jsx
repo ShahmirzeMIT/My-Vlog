@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { PageConatiner } from '../PageConatiner'
 import BlogCard from '../components/blogCard'
 import ChatLogo from '../assets/image/chat.jpg'
@@ -6,6 +6,7 @@ import '../assets/scss/blog.scss';
 import BackToTop from '../layout/BackToTop/BackToTop';
 import MyContact from '../components/contact';
 const Blog = () => {
+	
   return (
 	<PageConatiner>
 		<div className="container d-flex justify-content-between align-items-center myChat" id='top'>
