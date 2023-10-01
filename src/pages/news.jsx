@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PageConatiner } from '../PageConatiner'
 import '../assets/scss/news.scss'
 import Linkedin from "../assets/image/linkedin.png";
@@ -8,6 +8,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { Fade } from 'react-reveal';
 import MyContact from '../components/contact';
 import CustomCard from '../components/card';
+import api from '../api/api';
 const News = () => {
 
   const MyIcons = [
