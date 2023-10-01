@@ -23,21 +23,6 @@ const News = () => {
   const navigate = useNavigate();
   const [data, dispatch] = useReducer(reducer, []);
 
-  const MyIcons = [
-    {
-      src: Linkedin,
-      text: "Linkedin",
-    },
-    {
-      src: Reddit,
-      text: "Reddit",
-    },
-    {
-      src: Twiter,
-      text: "Twiter",
-    },
-  ];
-
   useEffect(() => {
     api
       .get("/news")
@@ -62,6 +47,7 @@ const News = () => {
       >
         {data.map((elem, index) => (
           <CustomCard
+            id={elem.id}
             key={index}
             text={elem.description}
             title={elem.title}

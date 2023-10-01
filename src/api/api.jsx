@@ -4,7 +4,7 @@ const baseURL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000/api";
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
-  timeout: 5000, // Set the timeout as needed
+  timeout: 5000, 
 });
 
 const api = {
@@ -26,7 +26,6 @@ const api = {
     }
   },
 
-  // Add other HTTP methods (e.g., put, delete) as needed
 };
 
 export default api;

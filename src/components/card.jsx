@@ -4,6 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import Fade from "react-reveal/Fade";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 const reducer = (state, action) => {
@@ -20,18 +23,22 @@ const reducer = (state, action) => {
   }
 };
 
-const CustomCard = ({ title, text, image }) => {
+const CustomCard = ({ id, title, text, image }) => {
+  const navigate=useNavigate()
   const [state, dispatch] = useReducer(reducer, {
     showDetails: false,
     cutText: text.substring(0, 159),
   });
 
   const { showDetails, cutText } = state;
-
+  const {setSentId}=useContext(AuthContext)
   return (
     <Fade bottom>
       <MuiCard sx={{ maxWidth: 280 }} className="my-3">
-        <CardActionArea>
+        <CardActionArea onClick={()=>{
+          setSentId(id);
+          navigate('/bignews')
+        }}>
           <img
             src={`http://127.0.0.1:8000/assets/image/news/${image}`}
             style={{ width: "100%", height: "173px" }}
