@@ -31,8 +31,8 @@ const News = () => {
   }, []);
 
   return (
-    <PageConatiner>
-      <div>
+    <>
+     <div>
         <div className="title">
           <div className="container">
             <h1>Are You Aware of It ?</h1>
@@ -55,7 +55,9 @@ const News = () => {
           />
         ))}
       </div>
-    </PageConatiner>
+    </>
+     
+   
   );
 };
 

@@ -1,0 +1,47 @@
+.starwars-data{
+flex-direction: column;
+.right{
+	img{
+		width: 100%;
+		animation: logo;
+		animation-duration: 2s;
+		animation-direction: alternate;
+		animation-iteration-count: infinite;
+	}
+}
+}
+@keyframes logo {
+	0%{transform: translateY(-40px);}
+	100%{transform: translateY(0px);}
+}
+.choose{
+	padding: 13px;
+    text-align: center;
+    color: black;
+    background: #f7f7e4;
+}
+.links{
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+}
+@media screen and (min-width:768px) {
+	.starwars-data{
+		flex-direction:row ;
+		.right{
+			img{
+				width: 400px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width:992px) {
+	.starwars-data{
+		.right{
+			img{
+				width: inherit;
+			}
+		}
+	}
+}

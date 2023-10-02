@@ -49,7 +49,7 @@ const BigNews = () => {
 
 
   return (
-    <PageConatiner>
+    <>
       <div className="container">
 		{state.map((elem,key)=>
 			<div key={elem.id}>
@@ -61,7 +61,7 @@ const BigNews = () => {
 			</div>
 		)}
 	 </div>
-    </PageConatiner>
+    </>
   );
 };
 

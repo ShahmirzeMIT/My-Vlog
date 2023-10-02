@@ -1,17 +1,20 @@
-import React from 'react'
-import { MyNavBar } from './layout/navbar/navbar'
-import Footer from './layout/footer/footer'
+import React from "react";
+import { MyNavBar } from "./layout/navbar/navbar";
+import Footer from "./layout/footer/footer";
+import { Outlet } from "react-router-dom";
 
-export const PageConatiner = ({children}) => {
+export const PageConatiner = () => {
   return (
     <div>
-	<header>
-	<MyNavBar/>
-	</header>
-	<main>{children}</main>
-	<footer>
-		<Footer/>
-	</footer>
+      <header>
+        <MyNavBar />
+      </header>
+      <main>
+        <Outlet />
+      </main>
+      <footer>
+     <Footer />
+      </footer>
     </div>
-  )
-}
+  );
+};

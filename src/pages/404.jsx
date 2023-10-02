@@ -1,13 +1,13 @@
 import React from 'react'
 import { PageConatiner } from '../PageConatiner'
 
-const Game = () => {
+const NotFound = () => {
   return (
 	<>
-		<div>Game</div>
+		 <div  style={{color:'red'}}>NotFound</div>
 	</>
-    
+   
   )
 }
 
-export default Game
+export default NotFound

@@ -19,6 +19,7 @@ export const MyNavBar = () => {
               <a href="/news">News</a>
               <a href="/blog">Blog</a>
               <a href="/game">Game</a>
+              <a href="/starwars/">Web Api</a>
               <a href="/contact">Contact</a>
 
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">

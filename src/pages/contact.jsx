@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import MyContact from '../components/contact';
 const Contact = () => {
   return (
-	<PageConatiner>
+	<>
 		<div className="myContact d-flex justify-content-between  align-items-center ">
 			<div className="container">
 				<div className="left">
@@ -45,7 +45,7 @@ const Contact = () => {
 			<Fade bottom cascade><span style={{fontWeight:"bold"}}>Location: </span>20 Yanvar Moskva avenue, 52</Fade>
 			</div>
 		</div>
-	</PageConatiner>
+	</>
     
   )
 }

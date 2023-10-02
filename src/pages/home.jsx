@@ -200,7 +200,7 @@ const Home = () => {
   }, []);
 
   return (
-    <PageConatiner>
+    <>
       <div className="container">
         <div className="d-flex justify-content-center mystyle" id="up">
           <Fade left big>
@@ -317,7 +317,7 @@ const Home = () => {
         
       </div>
      <BackToTop href="up"/>
-    </PageConatiner>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import MyContact from '../components/contact';
 const Blog = () => {
 	
   return (
-	<PageConatiner>
+	<>
 		<div className="container d-flex justify-content-between align-items-center myChat" id='top'>
 		<div className="left">
 			<h1>You Can Read My Artile!</h1>
@@ -31,7 +31,7 @@ const Blog = () => {
 		shfuygsdufidsjfudshfuydsgfgdhsfuhsdyfahusdgyfgsdytftwe7egisidofegwf7w"/>
 		<BackToTop href="top"/>
 		</div>
-	</PageConatiner>
+	</>
    
   )
 }
