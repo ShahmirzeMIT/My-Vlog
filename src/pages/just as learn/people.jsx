@@ -58,8 +58,8 @@ const People = () => {
         <p>Loading....</p>
       )}
     </div>
-
   );
 };
 
 export default People;
+
