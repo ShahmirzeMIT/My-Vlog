@@ -8,6 +8,7 @@ import Logo from "../../assets/image/6.png";
 import { Fade } from "react-reveal";
 import MyContact from "../../components/contact";
 import Think from "../../assets/image/think.png";
+import CircularProgress from '@mui/material/CircularProgress';
 const StarWars = () => {
   const [show, setShow] = useState(() => {
     const storedShow = localStorage.getItem("show");

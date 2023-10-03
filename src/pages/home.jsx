@@ -22,6 +22,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Fade from "react-reveal/Fade";
 import Slide from 'react-reveal/Slide';
 import BackToTop from "../layout/BackToTop/BackToTop";
+import CircularProgress from '@mui/material/CircularProgress';
 const Home = () => {
   const MyIcons = [
     {

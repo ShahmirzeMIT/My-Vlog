@@ -10,7 +10,7 @@ import MyContact from "../components/contact";
 import CustomCard from "../components/card";
 import api from "../api/api";
 import { useNavigate } from "react-router-dom";
-
+import CircularProgress from '@mui/material/CircularProgress';
 const reducer = (state, action) => {
   switch (action.type) {
     case "get-data":
@@ -45,7 +45,9 @@ const News = () => {
         className="container d-flex justify-content-center myContent gap-3 my-7"
         id="red"
       >
-        {data.map((elem, index) => (
+        {
+        data && data.length>0?
+        data.map((elem, index) => (
           <CustomCard
             id={elem.id}
             key={index}
@@ -53,7 +55,7 @@ const News = () => {
             title={elem.title}
             image={elem.image}
           />
-        ))}
+        )): <CircularProgress disableShrink />}
       </div>
     </>
      

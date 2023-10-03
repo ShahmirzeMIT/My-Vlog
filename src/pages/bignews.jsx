@@ -11,7 +11,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-
+import CircularProgress from '@mui/material/CircularProgress';
 const reducer = (state, action) => {
   switch (action.type) {
     case "get-data":
@@ -66,7 +66,8 @@ const BigNews = () => {
             <p className="mt-4">Created: {elem.updated_at.substring(0, 10) }</p>
             <p className="my">{elem.description}</p>
           </div>
-        )):<p style={{textAlign:'center'}}>Loading...</p>
+        )):
+       <div className="my-2"><CircularProgress disableShrink  /></div> 
         }
       </div>
     </>

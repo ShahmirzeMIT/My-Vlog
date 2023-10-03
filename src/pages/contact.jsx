@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import ContactImg from '../assets/image/contact.png'
 import Button from '@mui/material/Button';
 import MyContact from '../components/contact';
+import CircularProgress from '@mui/material/CircularProgress';
 const Contact = () => {
   return (
 	<>

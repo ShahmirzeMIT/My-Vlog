@@ -7,7 +7,7 @@ import BackToTop from "../layout/BackToTop/BackToTop";
 import MyContact from "../components/contact";
 import { useReducer } from "react";
 import api from "../api/api";
-
+import CircularProgress from '@mui/material/CircularProgress';
 const initialState = {
   data: [],
 };
@@ -54,7 +54,8 @@ const Blog = () => {
             <BlogCard key={index} title={elem.title} text={elem.description} />
           ))
         ) : (
-          <p style={{textAlign:'center'}}>Loading...</p>
+       <div style={{textAlign:'center'}}><CircularProgress disableShrink className="my-4" /></div>
+          
         )}
       </div>
     </>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Fade } from "react-reveal";
+import CircularProgress from '@mui/material/CircularProgress';
 const Planets = () => {
   const [planets, setPlanets] = useState();
   useEffect(() => {
@@ -64,7 +65,7 @@ const Planets = () => {
           </>
         ))
       ) : (
-        <p>Loading....</p>
+        <CircularProgress disableShrink className="my-4" />
       )}
     </div>
   );

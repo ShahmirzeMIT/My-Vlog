@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Fade } from "react-reveal";
+import CircularProgress from '@mui/material/CircularProgress';
 const People = () => {
   const [people, setPeople] = useState();
   useEffect(() => {
@@ -55,7 +56,7 @@ const People = () => {
 		
         ))
       ) : (
-        <p>Loading....</p>
+        <CircularProgress disableShrink className="my-4" />
       )}
     </div>
   );
