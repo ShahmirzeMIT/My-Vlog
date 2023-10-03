@@ -11,21 +11,24 @@ import Think from "../../assets/image/think.png";
 const StarWars = () => {
   const [show, setShow] = useState(() => {
     const storedShow = localStorage.getItem("show");
+    console.log(JSON.parse(storedShow));
     return storedShow ? JSON.parse(storedShow) : true;
   });
+
   useEffect(() => {
     localStorage.setItem("show", JSON.stringify(show));
-  }, [show]);
+  }, []);
   const handleNavLinkClick = () => {
     setShow(false);
   };
+
   return (
     <>
       <main className="container">
         <div className="starwars-data d-flex align-items-center">
           <Fade right>
             <div className="left">
-              <h1>What you want to get information about StarWasrs?</h1>
+              <h1>What you want to get information about StarWars?</h1>
               <p>
                 If you wanna get information about StarWars You will be given
                 information
