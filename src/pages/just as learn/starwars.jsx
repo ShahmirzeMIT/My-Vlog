@@ -7,9 +7,15 @@ import { BiLogoGraphql } from "react-icons/bi";
 import Logo from "../../assets/image/6.png";
 import { Fade } from "react-reveal";
 import MyContact from "../../components/contact";
-import Think from '../../assets/image/think.png'
+import Think from "../../assets/image/think.png";
 const StarWars = () => {
-  const [show,setShow]=useState(true)
+  const [show, setShow] = useState(() => {
+    const storedShow = localStorage.getItem("show");
+    return storedShow ? JSON.parse(storedShow) : true;
+  });
+  useEffect(() => {
+    localStorage.setItem("show", JSON.stringify(show));
+  }, [show]);
   const handleNavLinkClick = () => {
     setShow(false);
   };
@@ -56,7 +62,13 @@ const StarWars = () => {
         <Fade bottom>
           <Outlet />
         </Fade>
-      {show?   <div className="think my-4"><img  src={Think} alt="" /></div>:'' }
+        {show ? (
+          <div className="think my-4">
+            <img src={Think} alt="" />
+          </div>
+        ) : (
+          ""
+        )}
       </main>
       <footer></footer>
     </>
