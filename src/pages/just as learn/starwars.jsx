@@ -16,7 +16,7 @@ const StarWars = () => {
             <div className="left">
               <h1>What you want to get information about StarWasrs?</h1>
               <p>
-                If you wanna get information about StarWars I will be given
+                If you wanna get information about StarWars You will be given
                 information
               </p>
             </div>
