@@ -25,6 +25,20 @@ flex-direction: column;
 	color: black;
 	padding: 10px;
 }
+
+.think{
+	text-align: center;
+	img{
+		animation: think;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+}
+@keyframes think {
+		0%{transform: translateY(0px);}
+		100%{transform: translateY(20px);}
+}
 @media screen and (min-width:768px) {
 	.starwars-data{
 		flex-direction:row ;

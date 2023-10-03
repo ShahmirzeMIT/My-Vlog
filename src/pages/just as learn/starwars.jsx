@@ -7,7 +7,12 @@ import { BiLogoGraphql } from "react-icons/bi";
 import Logo from "../../assets/image/6.png";
 import { Fade } from "react-reveal";
 import MyContact from "../../components/contact";
+import Think from '../../assets/image/think.png'
 const StarWars = () => {
+  const [show,setShow]=useState(true)
+  const handleNavLinkClick = () => {
+    setShow(false);
+  };
   return (
     <>
       <main className="container">
@@ -35,13 +40,15 @@ const StarWars = () => {
         <nav className=" d-flex justify-content-center" id="text">
           <NavLink
             to="people"
-            className="d-flex align-items-center px-1  links"
+            className="d-flex align-items-center px-1 links"
+            onClick={handleNavLinkClick}
           >
             <BsFillPeopleFill /> People
           </NavLink>
           <NavLink
             to="planets"
             className="d-flex align-items-center px-1 links"
+            onClick={handleNavLinkClick}
           >
             <BiLogoGraphql /> PLanets
           </NavLink>
@@ -49,6 +56,7 @@ const StarWars = () => {
         <Fade bottom>
           <Outlet />
         </Fade>
+      {show?   <div className="think my-4"><img  src={Think} alt="" /></div>:'' }
       </main>
       <footer></footer>
     </>
